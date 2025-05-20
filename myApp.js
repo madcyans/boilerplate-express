@@ -18,6 +18,7 @@ app.get('/', (req, res) => {
 // Define a GET route for /json that responds with JSON
 app.get('/json', (req, res) => {
   console.log("Received GET request on '/json'");
+  console.log("MESSAGE_STYLE:", process.env.MESSAGE_STYLE);
   // Set the base message
   let message = "Hello json";
   // Read the environment variable MESSAGE_STYLE each time the route is hit
