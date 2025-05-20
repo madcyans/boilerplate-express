@@ -5,7 +5,6 @@ let app = express();
 
 // Use the app.get() method to serve "Hello Express" on the root path.
 app.get('/', (req, res) => {
-  app.listen(3000);
   console.log("Received GET request on '/'");
   res.send("Hello Express");
 });
