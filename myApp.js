@@ -6,7 +6,7 @@ let app = express();
 // Use the app.get() method to serve "Hello Express" on the root path.
 app.get('/', (req, res) => {
   console.log("Received GET request on '/'");
-  res.send("Hello Express");
+  res.sendFile(__dirname + '/views/index.html');
 });
 
 // ********** Your code ends here **********
