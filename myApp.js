@@ -1,8 +1,6 @@
 let express = require('express');
 let app = express();
 
-console.log("Hello, World!");
-
 // ********** Your code starts here **********
 
 // Use the app.get() method to serve "Hello Express" on the root path.
