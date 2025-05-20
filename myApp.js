@@ -13,6 +13,11 @@ app.get('/', (req, res) => {
   res.sendFile(__dirname + '/views/index.html');
 });
 
+// Define a GET route for /json that responds with JSON
+app.get('/json', (req, res) => {
+  console.log("Received GET request on '/json'");
+  res.json({ "message": "Hello json" });
+});
 // ********** Your code ends here **********
 
 
