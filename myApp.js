@@ -1,5 +1,6 @@
 let express = require('express');
 let app = express();
+require('dotenv').config()
 
 // ********** Your code starts here **********
 
@@ -16,7 +17,15 @@ app.get('/', (req, res) => {
 // Define a GET route for /json that responds with JSON
 app.get('/json', (req, res) => {
   console.log("Received GET request on '/json'");
-  res.json({ "message": "Hello json" });
+  // Set the base message
+  let message = "Hello json";
+  // Read the environment variable MESSAGE_STYLE each time the route is hit
+  if (process.env.MESSAGE_STYLE === 'uppercase') {
+    message = message.toUpperCase();
+  }
+  
+  // Respond with the JSON object
+  res.json({ "message": message });
 });
 // ********** Your code ends here **********
 
