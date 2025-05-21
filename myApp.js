@@ -5,7 +5,8 @@ let app = express();
 let bodyParser = require('body-parser');
 
 // ********** Your code starts here **********
-app.use(bodyParser.urlencoded({ extended: false })); // Parse URL-encoded bodies
+app.use(bodyParser.urlencoded({ extended: false }));
+ // Parse URL-encoded bodies
 
 // Root-level middleware that logs every request
 app.use((req, res, next) => {
