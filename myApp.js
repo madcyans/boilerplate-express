@@ -2,8 +2,11 @@ require('dotenv').config()
 
 let express = require('express');
 let app = express();
+let bodyParser = require('body-parser');
 
 // ********** Your code starts here **********
+app.use(bodyParser.urlencoded({ extended: false })); // Parse URL-encoded bodies
+
 // Root-level middleware that logs every request
 app.use((req, res, next) => {
   // Build the log message in the format: "METHOD path - ip"
@@ -57,39 +60,5 @@ app.get('/name', (req, res) => {
   res.json({ name: `${req.query.first} ${req.query.last}` });
 });
 // ********** Your code ends here **********
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
  module.exports = app;
