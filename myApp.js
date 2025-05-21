@@ -41,7 +41,7 @@ app.get('/now',function(req, res, next) {
   req.time = Date().toString();  // this will be the time of the request
   next();
 }, function(req, res) {
-  res.json(req.user);
+  res.json({ time: req.time });
 });
 // ********** Your code ends here **********
 
