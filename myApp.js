@@ -45,12 +45,19 @@ app.get('/now',function(req, res, next) {
 });
 
 // Using route parameters to create a route that responds with the word "word" in the URL
+// the route parameter is defined with a colon (:) before the parameter name
+//for example, here the route parameter is "word"
+// The route will respond with a JSON object containing the word
 app.get('/:word/echo', (req, res) => {
   const word = req.params.word; // Extract the word from the URL
   res.json({echo: word}); // Respond with the word in a JSON object
 });
-  // ********** Your code ends here **********
 
+app.get('/name', (req, res) => {
+  const { first, last } = req.query;
+  res.json({ name: '${first} ${last}' });
+  // ********** Your code ends here **********
+});
 
 
 
