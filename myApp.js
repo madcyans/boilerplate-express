@@ -45,9 +45,9 @@ app.get('/now',function(req, res, next) {
 });
 
 // Using route parameters to create a route that responds with the word "word" in the URL
-// and echoes it back in a JSON response
 app.get('/:word/echo', (req, res) => {
-  res.json({echo: req.params.word});
+  const word = req.params.word; // Extract the word from the URL
+  res.json({echo: word}); // Respond with the word in a JSON object
 });
   // ********** Your code ends here **********
 
