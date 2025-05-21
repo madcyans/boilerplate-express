@@ -57,9 +57,11 @@ app.get('/:word/echo', (req, res) => {
   res.json({echo: word}); // Respond with the word in a JSON object
 });
 
-app.get('/name', (req, res) => {
-  res.json({ name: `${req.query.first} ${req.query.last}` });
+app.post('/name', (req, res) => {
+  res.json({ name: `${req.body.first} ${req.body.last}` });
 });
+
+
 // ********** Your code ends here **********
 
  module.exports = app;
