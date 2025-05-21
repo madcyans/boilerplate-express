@@ -38,12 +38,18 @@ app.get('/json', (req, res) => {
 });
 
 app.get('/now',function(req, res, next) {
-  req.time = Date().toString();  // this will be the time of the request
+  req.time = Date().toString();  //first function will add a property to the request object
   next();
 }, function(req, res) {
-  res.json({ time: req.time });
+  res.json({ time: req.time }); // second function will use the property added by the first function
 });
-// ********** Your code ends here **********
+
+// Using route parameters to create a route that responds with the word "word" in the URL
+// and echoes it back in a JSON response
+app.get('/:word/echo', (req, res) => {
+  res.json({echo: req.params.word});
+});
+  // ********** Your code ends here **********
 
 
 
